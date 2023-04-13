@@ -6,16 +6,23 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Scanner;
 
 public class LogisticsService {
     
     public static void main(String[] args) {
         
-        String originCity = "New York City";
-        String originState = "NY";
-        String destCity = "Los Angeles";
-        String destState = "CA";
-        float ratePerMile = 0.5f;
+        Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Origin City:");
+		String originCity = sc.nextLine();
+		System.out.print("Enter Oigin State Code:");
+		String originState = sc.nextLine();
+		System.out.print("Enter Destination City:");
+		String destCity = sc.nextLine();
+		System.out.print("Enter Destination State Code:");
+		String destState = sc.nextLine();
+		System.out.print("Enter Rate Per Mile:");
+		float ratePerMile = sc.nextFloat();
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mssqlserver_msdb");
         EntityManager em = emf.createEntityManager();
